@@ -1,13 +1,14 @@
 alert('즐겁게 문제를 푸시다가 지겨우면 0을 입력하세요');
 
 let difficulty = +prompt('난이도를 설정합니다. 1. 상 (1 ~ 100) 2. 중 (1 ~ 50) 3. 하 (1 ~ 20)');
+const HIGH = 1, MIDDLE = 2, LOW = 3;
 
 let maxNum;
-if (difficulty === 1) {
+if (difficulty === HIGH) {
     maxNum = 100;
-} else if (difficulty === 2) {
+} else if (difficulty === MIDDLE) {
     maxNum = 50;
-} else if (difficulty === 3) {
+} else if (difficulty === LOW) {
     maxNum = 20;
 } else {
     alert('1 ~ 3 이외의 숫자를 입력하셨으니 중 난이도로 선택됩니다.');
