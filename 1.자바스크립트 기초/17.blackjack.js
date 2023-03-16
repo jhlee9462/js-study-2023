@@ -27,7 +27,7 @@ while (true) {
                 alert('패배하셨습니다.');
                 continue each;
             }
-        } while (confirm(`딜러 : ${dealer}\n당신 : ${user}\nstrike 하시겠습니까?`));
+        } while (confirm(`딜러 : ${dealer}\n당신 : ${user}\nhit 하시겠습니까?`));
 
         while (dealer < user) {
             dealer += Math.floor(Math.random() * 10 + 1);
