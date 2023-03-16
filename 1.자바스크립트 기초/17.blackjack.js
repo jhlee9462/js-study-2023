@@ -5,8 +5,8 @@ while (true) {
     each: while (chips > 0) {
         let bet = +prompt(`배팅할 칩의 갯수를 입력해 주세요.\n현재 칩 개수 : ${chips} 개`);
 
-        if (bet > chips) {
-            alert('현재 칩보다 많은 수를 입력하셨습니다.');
+        if (bet > chips || bet <= 0) {
+            alert('현재 칩보다 많은 수를 입력하셨거나 0 을 입력하셨습니다.');
             continue;
         }
 
