@@ -8,3 +8,9 @@ console.log(typeof n3);
 
 let n4 = '100' - 55;
 console.log(n4);
+
+//falsy
+console.log(undefined);
+console.log(null);
+console.log(0);
+console.log(NaN);
