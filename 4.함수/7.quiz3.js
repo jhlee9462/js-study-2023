@@ -22,8 +22,8 @@ function calcBMI(height, weight) {
     return bmi;
 }
 
-function round(bmi, index) {
-    return Math.floor(bmi * 10 ** index) / (10 ** index);
+function round(number, digit) {
+    return Math.round(number * 10 ** digit) / (10 ** digit);
 }
 
  var h = 178.4, w = 78.2;
