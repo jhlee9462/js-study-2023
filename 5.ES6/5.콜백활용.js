@@ -148,11 +148,17 @@ const appleBasket = [{
 
 // 사과중 녹색이면서 당도가 9이상인 사과만 선별하여 이 사과는 xxx색이며 당도가 xxx입니다. 라는 문자열이 모여있는 배열을 리턴하세요.
 
-appleBasket.filter(apple => apple.color === 'green' && apple.sweet >= 9)
+appleBasket
+  .filter(apple => apple.color === 'green' && apple.sweet >= 9)
   .map(apple => `이 사과는 ${apple.color}색이며 당도가 ${apple.sweet}입니다.`)
   .forEach(m => console.log(m));
 
 // userList에서 서울사는 user들의 첫번째 취미만 배열에 모아서 리턴
-userList.filter(u => u.address === '서울')
-  .map(u => u.hobby[0])
-  .forEach(h => console.log(h));
+userList
+  .filter(u => u.address === '서울')
+  .map(u => ({
+    fisrtHobby: u.hobby[0],
+    name: u.userName
+  }))
+  .forEach(info =>
+    console.log(`${info.name}회원의 첫번째 취미는 ${info.fisrtHobby}입니다.`));
