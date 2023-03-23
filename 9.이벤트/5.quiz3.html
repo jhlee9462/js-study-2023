@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #dropdown, #drop-content {
+            display: flex;
+            flex-flow: column;
+        }
+        #dropdown {
+            font-size: 20px;
+        }
+        .btn {
+            width: 100px;
+            height: 50px;
+            color: white;
+            background: brown;
+        }
+        #drop-content a {
+            background: lightgray;
+            width: 110px;
+            height: 50px;
+            margin: 2px 2px 2px 0;
+            text-decoration: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <div class="dropdown">
+        <button class="btn">Drop</button>
+        <div style="display: none" id="drop-content">
+            <a href="">Menu1</a>
+            <a href="">Menu2</a>
+            <a href="">Menu3</a>
+            <a href="">Menu4</a>
+            <a href="">Menu5</a>
+        </div>
+    </div>
+
+    <script>
+        const $btn = document.querySelector('.btn');
+
+        $btn.onclick = () => {
+            const $dropContent = document.getElementById('drop-content');
+
+            if ($dropContent.style.display === 'none')
+                $dropContent.style.display = null;
+            else
+                $dropContent.style.display = 'none';
+        };
+    </script>
+</body>
+</html>

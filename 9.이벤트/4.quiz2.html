@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #lunches.hide ul {
+            display: none;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        .title {
+            margin-left: 15px;
+        }
+
+        #lunches .title::before {
+            content: '';
+            display: inline-block;
+            width: 0;
+            height: 0;
+            border-left: 14px solid green;
+            border-top: 7px solid transparent;
+            border-bottom: 7px solid transparent;
+            margin-right: 10px;
+            transform: rotate(90deg);
+        }
+        
+        #lunches.hide .title::before {
+            transform: rotate(0);
+        }
+
+
+    </style>
+</head>
+
+<body>
+    <div id="lunches" class="menu">
+        <span class="title">추천 메뉴(Click Me!)</span>
+        <ul>
+            <li>돈까스</li>
+            <li>군만두</li>
+            <li>볶음밥</li>
+            <li>마파두부</li>
+        </ul>
+    </div>
+
+
+    <script>
+        const $title = document.querySelector('.title');
+
+        $title.onclick = () => {
+            const $ul = document.getElementById('lunches').lastElementChild;
+            $ul.parentElement.classList.toggle('hide');
+        };
+    </script>
+</body>
+
+</html>
