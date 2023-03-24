@@ -1,24 +1,36 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        #dropdown, #drop-content {
+        .dropdown,
+        #drop-content {
             display: flex;
             flex-flow: column;
+            position: absolute;
+            z-index: 9999;
         }
-        #dropdown {
+
+        .dropdown {
             font-size: 20px;
+            width: fit-content;
         }
+
         .btn {
             width: 100px;
             height: 50px;
             color: white;
             background: brown;
         }
+
+        #drop-content {
+            top: 50px;
+        }
+
         #drop-content a {
             background: lightgray;
             width: 110px;
@@ -30,8 +42,13 @@
             align-items: center;
             color: black;
         }
+        #drop-content a:hover {
+            background: #000;
+            color: #fff;
+        }
     </style>
 </head>
+
 <body>
     <div class="dropdown">
         <button class="btn">Drop</button>
@@ -46,15 +63,21 @@
 
     <script>
         const $btn = document.querySelector('.btn');
+        const $dropContent = document.getElementById('drop-content');
 
-        $btn.onclick = () => {
-            const $dropContent = document.getElementById('drop-content');
+        /*
+            mouseover, mouseout
+            mouseenter, mouseleave
+        */
 
-            if ($dropContent.style.display === 'none')
-                $dropContent.style.display = null;
-            else
-                $dropContent.style.display = 'none';
+        $btn.onmouseenter = e => {
+            $dropContent.style.display = null;
         };
+
+        $btn.parentElement.onmouseleave = e => {
+            $dropContent.style.display = 'none';
+        }
     </script>
 </body>
+
 </html>
