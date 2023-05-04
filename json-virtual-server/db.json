@@ -1,0 +1,16 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "account": "abc1234",
+      "userName": "주차킹",
+      "address": "캘리포니아"
+    },
+    {
+      "id": 2,
+      "account": "def5678",
+      "userName": "산책킹",
+      "address": "뉴욕"
+    }
+  ]
+}
